@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>老虎机</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="description" content="Description" />
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		function run(){
+			var one;
+ 			var two;
+ 			var three;
+			var images=["image/bar.png","image/bigwin.png","image/yingtao.png"];
+			one=Math.floor(Math.random()*(3-1+1))+1;
+			two=Math.floor(Math.random()*(3-1+1))+1;
+			three=Math.floor(Math.random()*(3-1+1))+1;
+			$(".shuying").html("你赢了100万！");
+			$($(".insert")[0]).html(one);
+			$($(".insert")[1]).html(two);
+			$($(".insert")[2]).html(three);
+			if(one==two&&two==three){
+				$(".jieguo").html("赢了");
+				return null;
+				}
+			if(one!==undefined&&two!==undefined&three!==undefined){
+				$(".jieguo").html("输了");
+				}
+				return null;
+
+			}
+		$("document").ready(
+		function (){$(".go").click(
+			function(){
+				run();
+				});
+			});
+	</script>
+	<style>
+		.waikuang{
+		width:350px;
+		height:600px;
+		background-color:black;
+		margin:-5px auto;}
+		.jichu{
+			display:inline-block;
+			background-color:yellow;
+			margin:10px 25px;
+			border: 10px solid #fff;
+			text-align:center;
+			border-radius:20px;
+			}
+		.biaoti{
+			width:280px;
+			height:100px;
+			}
+		.xianshi{
+			width:280px;
+			height:150px;
+			}
+		.anniu{
+			width:280px;
+			height:50px;
+			}
+		.jieguo{
+			width:280px;
+			height:80px;
+			}
+		.insert{float:left;
+			width:70px;
+			height:110px;
+			background-color:#eee;
+			margin-top:25px;
+			margin-left:18px;}
+			.go{
+				width:100%;
+				height:100%;
+				background-color:red;
+				font-size:20px;
+				color:white;
+				}
+				.shuying{
+				font-size:20px;
+				color:black;
+					}
+	</style>
+
+</head>
+
+<body>
+	<div class="waikuang">
+	<div class="jichu biaoti">
+		<h2>老虎机</h2>
+		<p>18高技</p>
+	</div>
+	<div class="jichu xianshi">
+		<div class="insert"></div>
+		<div class="insert"></div>
+		<div class="insert"></div>
+	</div>
+	<div class="jichu anniu">
+		<button class="go">摇一摇</button>
+	</div>
+	<div class="jichu jieguo">
+		<span class="shuying"></span>
+	</div>
+	</div>
+		
+	
+
+</body>
+
+</html>
